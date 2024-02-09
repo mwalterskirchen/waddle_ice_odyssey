@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://cttu5qnddcydp"]
+[gd_scene load_steps=2 format=3 uid="uid://cttu5qnddcydp"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://danblso8expm7" path="res://UI/go.png" id="1_5i8p5"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(319, 154)
+scale = Vector2(4, 4)
+texture = ExtResource("1_5i8p5")
