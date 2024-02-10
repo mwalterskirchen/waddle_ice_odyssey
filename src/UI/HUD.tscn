@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://7a0veyl07q14"]
+
+[ext_resource type="Texture2D" uid="uid://d3x7j4kdrkssb" path="res://src/UI/hearts.png" id="1_jyuow"]
+[ext_resource type="Script" path="res://src/UI/music_toggle.gd" id="2_dwn4g"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Heart1" type="NinePatchRect" parent="."]
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("1_jyuow")
+region_rect = Rect2(16, 2.08165e-12, 16, 16)
+
+[node name="Heart2" type="NinePatchRect" parent="."]
+layout_mode = 2
+offset_left = 28.0
+offset_right = 44.0
+offset_bottom = 16.0
+texture = ExtResource("1_jyuow")
+region_rect = Rect2(16, 2.08165e-12, 16, 16)
+
+[node name="Heart3" type="NinePatchRect" parent="."]
+layout_mode = 2
+offset_left = 14.0
+offset_right = 30.0
+offset_bottom = 16.0
+texture = ExtResource("1_jyuow")
+region_rect = Rect2(16, 2.08165e-12, 16, 16)
+
+[node name="Music Toggle" type="Button" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 9.0
+offset_right = 628.0
+offset_bottom = 40.0
+text = "Music On/Off"
+script = ExtResource("2_dwn4g")
+
+[connection signal="pressed" from="Music Toggle" to="Music Toggle" method="_on_pressed"]
