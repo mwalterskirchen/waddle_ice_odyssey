@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://cs0ri7fqkuxy0"]
+
+[ext_resource type="Script" path="res://Playrer.gd" id="1_2uxvh"]
+[ext_resource type="Texture2D" uid="uid://cw7te5uc6ll0u" path="res://src/Enemies/penguin.png" id="2_ldtcu"]
+[ext_resource type="Texture2D" uid="uid://de3hn7th7kbkw" path="res://src/Enemies/penguin_up1.png" id="3_uoa6w"]
+[ext_resource type="Texture2D" uid="uid://iockrmflcx4h" path="res://src/Enemies/penguin_up.png" id="4_h3s71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkph5"]
+atlas = ExtResource("2_ldtcu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk86m"]
+atlas = ExtResource("2_ldtcu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh8ow"]
+atlas = ExtResource("2_ldtcu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lynyw"]
+atlas = ExtResource("2_ldtcu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vosg7"]
+atlas = ExtResource("2_ldtcu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3djnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkph5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uoa6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h3s71")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk86m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh8ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lynyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vosg7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqwvl"]
+size = Vector2(34, 31)
+
+[node name="Playrer" type="CharacterBody2D"]
+script = ExtResource("1_2uxvh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(50.5, 26.5)
+scale = Vector2(2.03125, 1.90625)
+sprite_frames = SubResource("SpriteFrames_3djnf")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 42.5)
+shape = SubResource("RectangleShape2D_mqwvl")
